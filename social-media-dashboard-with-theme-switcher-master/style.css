@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+:root{
+    --Lime-Green: hsl(163, 72%, 41%);
+    --Bright-Red: hsl(356, 69%, 56%);
+    --Facebook: hsl(208, 92%, 53%);
+    --Twitter: hsl(203, 89%, 53%);
+    --Instagram: linear-gradient(45deg,hsl(37, 97%, 70%),hsl(329, 70%, 58%));
+    --YouTube: hsl(348, 97%, 39%);
+
+
+
+    /* Light Theme */
+    --White-BG: hsl(0, 0%, 100%);
+    --Very-Pale-Blue-Top-BG-Pattern: hsl(225, 100%, 98%);
+    --Light-Grayish-Blue-Card-BG: hsl(227, 47%, 96%);
+    --Dark-Grayish-Blue-Text: hsl(228, 12%, 44%);
+    --Very-Dark-Blue-Text: hsl(230, 17%, 14%);
+
+
+    --border-radius : 7px;
+}
+
+
+/* ------Default Styles -------- */
+*,::after,::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+li{
+    list-style-type: none;
+}
+
+body{
+    min-height: 100vh;
+    width: 100%;
+    font-size: 14px;
+    position: relative;  
+    font-family: 'Inter', sans-serif; 
+    padding: 2.5rem 0;
+   
+}
+.bg-top{
+    position: absolute;
+    top: -40px;
+    left: 0px;
+    right: 0px;
+    height: 280px;
+    background-color: var(--Very-Pale-Blue-Top-BG-Pattern);
+    border-radius: 15px;
+}
+.dashboard-container{
+    --gap : 30px; /* this variable is local to dashboard container div */
+    width: 85%;
+    margin: 30px auto;
+    position: relative;
+    z-index: 5;
+}
+
+.header h1{
+    font-size: 22px;
+    border-bottom: 1px solid var(--Dark-Grayish-Blue-Text);
+    padding-bottom: 20px;
+
+}
+.header span{
+    display: block;
+    font-size: 13px;
+    color: var(--Dark-Grayish-Blue-Text);
+    
+}
+.header .toggle{
+    color: var(--Dark-Grayish-Blue-Text);
+    padding-top: 25px;
+    font-weight: bold;
+}
+
+/* ------Top Grid--------- */
+.stats-grid{
+    padding: 30px 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: var(--gap);
+    /* grid-auto-rows: 200px;    */
+}
+
+.stats-grid-items{
+    padding-block: 25px;
+    text-align: center;
+    background-color: var(--Light-Grayish-Blue-Card-BG);
+    border-radius: var(--border-radius);
+    position: relative;
+    cursor: pointer;
+}
+.username{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--Dark-Grayish-Blue-Text);
+    font-weight: bold;
+    gap: 5px;
+}
+.stats{
+    font-size: 3.5rem;
+    line-height: 1;
+    margin: 1.8rem 0 0.2rem 0;
+    color: var(--Very-Dark-Blue-Text);
+}
+.followers{
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: var(--Dark-Grayish-Blue-Text);
+    margin-bottom: 1.5rem;
+}
+.today-followed{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-weight: bold;
+}
+
+/* -----Border styles of social items */
+
+.stats-grid-items::before{
+    content: ' ';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+}
+
+.facebook::before{
+    background: var(--Facebook);
+}
+.twitter::before{
+    background: var(--Twitter);
+}
+.instagram::before{
+   background: var(--Instagram);
+    
+}
+.youtube::before{
+    background: var(--YouTube);
+}
+
+
+/* ---------Overview Grid------------ */
+.overview-container h1{
+    margin-bottom: 2rem;
+    color: var(--Dark-Grayish-Blue-Text);
+}
+.overview-grid{
+    display: grid;
+    grid-gap: 2rem;
+}
+.overview-grid-item{
+    padding: 2.5rem 2.0rem;
+    background-color: var(--Light-Grayish-Blue-Card-BG);
+    border-radius: var(--border-radius);
+    position: relative;
+    cursor: pointer;
+}
+.overview-item-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+.overview-item-header .item-title{
+    color: var(--Dark-Grayish-Blue-Text);
+    font-weight: bold;
+}
+.overview-item-stats{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+.overview-item-stats h1{
+    margin-bottom: 0;
+    color: var(--Very-Dark-Grayish-Blue-Text);
+}
+.overview-item-stats .today-followed{
+    margin-bottom: 4px;
+}
+
+/* ---------Media Quesries--------------- */
+@media (min-width: 600px){
+    .stats-grid, .overview-grid{
+        grid-template-columns: 1fr 1fr;
+    }
+    .header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .header h1{
+        border-bottom: none;
+        padding-bottom: 0px;
+    }
+    .header .toggle{
+        color: var(--Dark-Grayish-Blue-Text);
+        padding-top: 0px;
+        font-weight: bold;
+    }
+}
+
+@media (min-width: 1200px){
+    .stats-grid, .overview-grid{
+        grid-template-columns: repeat(4,1fr);
+    }
+}
+
+/* -----------Utility Classes-------------- */
+.up{
+    color: var(--Lime-Green);
+}
+.down{
+    color: var(--Bright-Red);
+}
+
+/* ------------Active States------------- */
+.stats-grid-items:hover,
+.overview-grid-item:hover{
+    background-color: hsla(230, 44%, 86%, 0.751);
+}
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,84 @@
+:root{
+    --Toggle: hsl(230, 22%, 74%);
+    --Toggle-Dark: linear-gradient(45deg,hsl(210, 78%, 56%),hsl(146, 68%, 55%));
+    --size : 30px;
+
+    /* Dark theme toggle variables */
+    --Very-Dark-Blue-BG: hsl(230, 17%, 14%);
+    --Very-Dark-Blue-Top-BG-Pattern: hsl(232, 19%, 15%);
+    --Dark-Desaturated-Blue-Card-BG: hsl(228, 28%, 20%);
+    --Desaturated-Blue-Text: hsl(228, 34%, 66%);
+    --White-Text: hsl(0, 0%, 100%);
+}
+.toggle{ 
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.toggle--checkbox{
+    display: none;
+}
+.toggle--label{
+    display: block;
+    width: 70px;
+    height: 30px;
+    background-color: var(--Toggle);
+    border-radius: 50px;
+    position: relative;
+    cursor: pointer; 
+}
+.toggle--label:before{
+    content: '';
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    transform: scale(0.8);
+    transition: all 200ms ease-in-out;
+}
+
+.active{
+    color: white;
+    background-color: var(--Very-Dark-Blue-BG);
+}
+.active .toggle--label{
+    background: var(--Toggle-Dark); 
+}
+.active .toggle--label:before{
+    left: 39px;
+}
+
+.active .bg-top{ 
+    background-color: var(--Very-Dark-Blue-Top-BG-Pattern);  
+}
+
+.header span, .header .toggle,
+ .username, .followers,
+ .overview-item-header .item-title{
+    color: var(--Desaturated-Blue-Text);
+}
+.active .stats,
+.active .overview-container h1{
+    color: white;
+}
+
+.active .stats-grid-items,
+.active .overview-grid-item{
+    background-color: var(--Dark-Desaturated-Blue-Card-BG);
+}
+
+.active .stats-grid-items:hover,
+.active .overview-grid-item:hover{
+   background-color: hsl(229, 31%, 32%);
+}
+
+@media (min-width: 600px){
+    .toggle{
+        justify-content: center;
+    }
+}

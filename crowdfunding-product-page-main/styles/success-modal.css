@@ -1,0 +1,21 @@
+.success-modal{
+    width: 90%;
+    max-width: 30rem;
+    background-color: #fff;
+    margin: 0 auto;
+    padding: 2rem 2rem 2.5rem 2rem;
+    border-radius: 15px;
+    text-align: center;
+    display: none;
+}
+.success-modal img{
+    margin: 1rem 0 1.5rem 0;
+}
+.success-modal p{
+    margin-block: 2rem;
+    color: var(--Dark-gray);
+}
+.success-modal .primary-btn{
+    width: 150px;
+    margin: 0 auto;
+}

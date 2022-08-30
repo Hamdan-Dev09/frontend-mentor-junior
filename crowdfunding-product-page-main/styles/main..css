@@ -1,0 +1,226 @@
+:root{
+    /* Primary */
+    --Moderate-cyan: hsl(176, 50%, 47%);
+    --Dark-cyan: hsl(176, 72%, 28%);
+
+    /* Neutral */
+    --Black: hsl(0, 0%, 0%);
+    --Dark-gray: hsl(0, 0%, 48%);
+}
+
+.main{
+    width: 90%;
+    max-width: 800px;
+    margin: -50px auto 0 auto;
+    border-radius: 10px;
+   
+}
+.main-item{
+    text-align: center;
+    padding: 2rem 1.5rem;
+    margin-bottom: 2rem;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 2px hsl(0, 15%, 83%);
+}
+.main-item p{
+    color: var(--Dark-gray);
+    line-height: 1.5;
+}
+.main-item h1{
+    color: var(--Black);
+}
+.project-header{
+    position: relative;
+}
+.top-logo{
+    position: absolute;
+    top: calc(-56px / 2);
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.project-header h1{
+    margin: 15px 0 25px 0;
+}
+.project-header p{
+    margin-bottom: 20px;
+}
+.flex-container-sb{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+.primary-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--Moderate-cyan);
+    height: 56px;
+    width: 250px;
+    border-radius: 50px;
+}
+#toggle{
+    display: none;
+}
+.bookmark{
+    display: flex;
+    cursor: pointer;
+}
+.bookmark span{
+    display: none;
+}
+
+/* -------Project-Stats---------- */
+.stats-container{
+    display: flex;
+    flex-direction: column;
+}
+.stats{
+    padding-block: 1.5rem;
+    position: relative;
+}
+.stats h1{
+    margin-bottom: 8px;
+}
+.stats:nth-child(1)::before,
+.stats:nth-child(2)::after{
+   content: '';
+   position: absolute;
+   bottom: 0;
+   left: 50%;
+   transform: translateX(-50%);
+   width: 70px;
+   height: 1px;
+   background-color: hsl(0, 15%, 83%);
+}
+
+.status-bar{
+    width: 100%;
+    height: 12px;
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+    background-color: hsl(240, 26%, 96%);
+}
+.status-bar::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 70%;
+    height: 100%;
+    background-color: var(--Moderate-cyan);
+    border-radius: 30px;
+}
+
+
+/* ----------About-Section---------- */
+.project-info{
+    text-align: left;
+}
+.project-info > h1{
+    font-size: 1.5rem;
+}
+.project-info  p{
+    margin-block: 1.5rem;
+}
+
+.project-variants{
+    padding: 25px;
+    border: 1px solid hsl(0, 15%, 83%);
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+.project-variants .title{
+    margin-block: 0;
+    color: black;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+.project-variants .sub-title{
+    margin-block: 0;
+    color: var(--Moderate-cyan);
+    font-weight: 500;
+}
+.project-variants h1{
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.project-variants span{
+    font-size: 16px;
+    margin-left: 5px;
+    color: var(--Moderate-cyan);
+    font-weight: 400;
+}
+.project-variants .primary-btn{
+    width: 180px;
+    font-weight: 700;
+}
+
+
+
+
+/* ---------Media Queries------------ */
+@media(min-width : 700px){
+    .main-item{
+        padding: 3rem 3.5rem;
+    }
+    .bookmark{
+        align-items: center;
+        gap: 10px;
+        background-color: hsl(240, 26%, 96%);
+        padding-right: 20px;
+        border-radius: 100px;
+    }
+    .bookmark span{
+        display: block;
+        color: black;
+        color: var(--Dark-gray);
+        font-weight: 700;
+        
+    }
+    .stats-container{
+        flex-direction: row;
+    }
+    .stats{
+        flex-basis: 33%;
+        text-align: left;
+        margin-bottom: 1rem;
+    }
+    .stats:nth-child(1)::before,
+    .stats:nth-child(2)::after{
+        transform: unset;
+        left: unset;
+        top: 50%;
+        right: 0px;
+        transform: translateY(-50%);
+        width: 1px;
+        height: 70px;
+    }
+    .stats:nth-child(1){
+        padding-right: 30px;
+    }
+    .stats:nth-child(2),
+    .stats:nth-child(3){
+        padding-left: 50px;
+        padding-right: 50px;
+        
+    }
+    .flex{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .project-variants .title{
+        margin-bottom: 0;
+    }
+    .project-variants h1{
+        margin-bottom: 0;
+    }
+}
+
